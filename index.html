@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <title>Budget App</title>
+</head>
+<body>
+
+    <h1>Budget App</h1>
+
+
+    <div id="main-container">
+        <div id="left-container">
+            <div id="income">
+                <h2>Budget</h2>
+                <input type="text" id="budInp" placeholder="0" onfocus="document.getElementById('budInp').value = '' " />
+                <br>
+                <button
+                 id="calcBud"
+                 onClick="setBudget()">
+                 Calculate
+                </button>
+            </div>
+
+            <div id="expenses">
+                <h2>Expense</h2>
+                    <h3>Expense title</h3>
+                    <input type="text" id="expT" placeholder="" />
+                    <br>
+                    <span id="warning"></span>
+
+                    <h3>Expense value</h3>
+                    <input type="text" id="expInp" placeholder="0" onfocus="document.getElementById('expInp').value = '' " />
+                    <br>
+                    <button
+                     id="calcExp"
+                     onClick="calcExpenses()">
+                     Calculate
+                    </button>
+            </div>
+        </div>
+
+        <div id="right-container">
+            <div id="budHead">
+                <h2>Budget</h2>
+                <div id="budVal"></div>
+            </div>
+
+            <div id="expHead">
+                <h2>Expenses</h2>
+                <div id="expVal"></div>
+            </div> 
+
+            <div id="balHead">
+                <h2>Balance</h2>
+                <div id="balVal"></div>
+            </div>
+
+            <div id="list-container">
+                <center>
+                    <h3>Expenses</h3>
+                </center>
+
+                <table>
+                    <tr id="last-row">
+                        <th>Title</th>
+                        <th>Value</th>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

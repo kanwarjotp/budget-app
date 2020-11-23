@@ -1,0 +1,88 @@
+body {
+    background-color: aliceblue;
+    font-family: 'Unica One', cursive;
+    margin: 3vw;
+
+}
+
+#main-container {
+    display: flex;
+}
+
+#left-container {
+    text-align: left;
+    width: 40%;
+    border: 1px solid;
+    padding: 5px;
+}
+
+h1 {
+    font-size: 55px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+
+h3 {
+    position: relative;
+    margin-left: 30px;
+}
+
+#right-container {
+    position: relative;
+    margin-left: auto;
+    width: 50%;
+    border: 1px solid;
+    padding: 5px 10px 5px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+button {
+    background-color: aliceblue;
+    border: lightskyblue 0.5px solid;
+    padding: 10px 25px 10px 25px;
+    position: relative;
+    margin: 10px 30px 10px 30px;
+    font-size: 15px;
+}
+
+
+input{
+    position: relative;
+    margin-left: 30px; 
+    width: 50%;
+    height: 30px;
+}
+
+#budHead, #expHead, #balHead {
+    height: 150px;
+    text-align: center;
+}
+
+#budVal, #expVal, #balVal {
+    font-size: 30px;
+}
+
+#warning {
+    position: relative;
+    color: salmon;
+    margin-left: 30px;
+}
+
+
+#list-container {
+    width: 100%;
+    border: 1px solid;
+}
+
+table {
+    width: 100%;
+}
+
+td, th{
+    text-align: center;
+}
