@@ -29,10 +29,10 @@ function calcExpenses() {
 
             //adding expense to the expense list on html page
             if(expTitleList.length == 1){
-                createNewElement("last-row");
+                createNewElement("first-row");
             }
             else {
-                let txt = "" + expensesTitle[-1];
+                let txt = "" + expTitleList[expTitleList.length - 2];
                 createNewElement(txt);
             }
         }
@@ -70,9 +70,12 @@ function setColor(val, dom){
 }
 
 function createNewElement(parentElementId) {
+    console.log(parentElementId);
     let node = document.getElementById(parentElementId);
+    console.log(node);
     let idSet = expTitleList[expTitleList.length - 1];
-    let txt =  '<tr id="'+ idSet +'"><td>' + idSet +'</td></tr>';
+    let txt =  '<tr id="'+ idSet +'"><td>' + idSet +'</td><td>'+expList[expList.length - 1]+'</td></tr>';
     node.insertAdjacentHTML('afterend', txt);
+
 }
 
