@@ -75,3 +75,4 @@ function createNewElement(parentElementId) {
     let txt =  '<tr id="'+ idSet +'"><td>' + idSet +'</td></tr>';
     node.insertAdjacentHTML('afterend', txt);
 }
+
