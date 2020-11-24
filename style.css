@@ -1,5 +1,6 @@
 body {
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
+    background-image: linear-gradient(to right, rgba(99, 163, 247, 0.5), rgba(184, 138, 243, 0.5));
     font-family: 'Unica One', cursive;
     margin: 3vw;
 
@@ -10,6 +11,7 @@ body {
 }
 
 #left-container {
+    background-image: linear-gradient(to right, rgba(112, 221, 248, 0.5), rgba(149, 165, 255, 0.5));
     text-align: left;
     width: 40%;
     margin-left: 20px;
@@ -34,6 +36,7 @@ h3 {
 }
 
 #right-container {
+    background-image: linear-gradient(to right,  rgba(149, 165, 255, 0.5), rgba(147, 120, 248, 0.5));
     position: relative;
     margin-left: auto;
     width: 50%;
