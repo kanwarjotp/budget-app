@@ -70,12 +70,41 @@ function setColor(val, dom){
 }
 
 function createNewElement(parentElementId) {
-    console.log(parentElementId);
     let node = document.getElementById(parentElementId);
-    console.log(node);
     let idSet = expTitleList[expTitleList.length - 1];
-    let txt =  '<tr id="'+ idSet +'"><td>' + idSet +'</td><td>'+expList[expList.length - 1]+'</td></tr>';
+    let txt =  '<tr id="'+ idSet +'"><td>' + idSet +'</td><td>'+ expList[expList.length - 1] +'</td><td><button onClick="deleteElement(\''+ idSet+ '\')"></td></tr>';
     node.insertAdjacentHTML('afterend', txt);
+}
+
+function deleteElement(eId) {
+    let txt = "" + eId + "";
+    document.getElementById(txt).remove();
+    //element removed from html page
+    
+    for(var i = expList.length - 1; i >= 0 ; i--) {
+        if(txt == expTitleList[i]) {
+            expTitleList.splice(i, 1);
+            expList.splice(i, 1);
+            break;
+        }
+    }
+    //element removed from lists;
+
+    refresh();
 
 }
 
+function refresh(){
+    let bud = document.getElementById("budVal").innerHTML;
+    //calculating expenses again;
+    let expenses = expList.reduce(function(a, b){
+        return a + b;
+    }, 0);
+    //calculating bal again
+    let bal = parseInt(bud) - expenses;
+    //refreshing the values
+    document.getElementById("expVal").innerHTML = expenses;
+    document.getElementById("balVal").innerHTML = bal;
+    setColor(expenses, document.getElementById("expVal"));
+    setColor(bal,document.getElementById("balVal") )
+}
