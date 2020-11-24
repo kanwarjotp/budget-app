@@ -1,6 +1,7 @@
 //list containing the expenses information
 var expList = [];
 var expTitleList = [];
+var expDispTitle = [];
 
 //setting counter
 var count = 0;
@@ -20,6 +21,8 @@ function calcExpenses() {
     let expense = parseInt(document.getElementById("expInp").value);
     let budget = parseInt(document.getElementById("budVal").innerHTML);
     let expenseTitle = document.getElementById("expT").value + "" + count;
+    let expenseDispTitle = document.getElementById("expT").value;
+
 
     //adding new exp to the lists when exp != 0
     if(expense != 0 ) {
@@ -31,6 +34,7 @@ function calcExpenses() {
             document.getElementById("warning").innerHTML = "";
 
             expList.push(parseInt(expense));
+            expDispTitle.push(expenseDispTitle);
             expTitleList.push(expenseTitle);
 
             //adding expense to the expense list on html page
@@ -80,7 +84,7 @@ function createNewElement(parentElementId) {
     //adding the counter for uniqueness
     let idSet = expTitleList[expTitleList.length - 1];
     //parallel for name, i.e. display name
-    let disp = expTitleList[expTitleList.length - 1];
+    let disp = expDispTitle[expDispTitle.length - 1];
     let txt =  '<tr id="'+ idSet +'"><td>' + disp +'</td><td>'+ expList[expList.length - 1] +'</td><td><button onClick="deleteElement(\''+ idSet+ '\')"></td></tr>';
     node.insertAdjacentHTML('afterend', txt);
 }
