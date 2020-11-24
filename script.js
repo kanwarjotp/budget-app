@@ -2,6 +2,9 @@
 var expList = [];
 var expTitleList = [];
 
+//setting counter
+var count = 0;
+
 function setBudget(){
     //resetting the warning
     document.getElementById("warning").innerHTML = "";
@@ -16,11 +19,14 @@ function setBudget(){
 function calcExpenses() {
     let expense = parseInt(document.getElementById("expInp").value);
     let budget = parseInt(document.getElementById("budVal").innerHTML);
-    let expenseTitle = document.getElementById("expT").value;
+    let expenseTitle = document.getElementById("expT").value + "" + count;
 
     //adding new exp to the lists when exp != 0
     if(expense != 0 ) {
         if( expenseTitle != "") {
+            //incrementing the counter
+            count++;
+
             //resetting the warning
             document.getElementById("warning").innerHTML = "";
 
@@ -71,8 +77,11 @@ function setColor(val, dom){
 
 function createNewElement(parentElementId) {
     let node = document.getElementById(parentElementId);
+    //adding the counter for uniqueness
     let idSet = expTitleList[expTitleList.length - 1];
-    let txt =  '<tr id="'+ idSet +'"><td>' + idSet +'</td><td>'+ expList[expList.length - 1] +'</td><td><button onClick="deleteElement(\''+ idSet+ '\')"></td></tr>';
+    //parallel for name, i.e. display name
+    let disp = expTitleList[expTitleList.length - 1];
+    let txt =  '<tr id="'+ idSet +'"><td>' + disp +'</td><td>'+ expList[expList.length - 1] +'</td><td><button onClick="deleteElement(\''+ idSet+ '\')"></td></tr>';
     node.insertAdjacentHTML('afterend', txt);
 }
 
