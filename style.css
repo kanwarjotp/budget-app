@@ -12,7 +12,10 @@ body {
 #left-container {
     text-align: left;
     width: 40%;
-    border: 1px solid;
+    margin-left: 20px;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
     padding: 5px;
 }
 
@@ -34,7 +37,9 @@ h3 {
     position: relative;
     margin-left: auto;
     width: 50%;
-    border: 1px solid;
+    border-right: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
     padding: 5px 10px 5px 10px;
     display: flex;
     flex-wrap: wrap;
@@ -76,7 +81,7 @@ input{
 
 #list-container {
     width: 100%;
-    border: 1px solid;
+    border-top: 1px solid;
 }
 
 table {
